@@ -26,11 +26,11 @@ namespace HackatonProject.Pages
         {
             return new ObservableCollection<Event>
             {
-                new Event { Title = "Отключение горячей воды", Image = "banner.png", Venue = "Важно", Duration = "07:30 - 09:30", Date = new DateTime(2020, 6, 8), Description = "В связи с проведением работ по замене узла на ПНС «Ростоши-2». Пос. Ростоши-2. В районе отключения ЦТП и котельные отсутствуют. Подвоз воды по заявкам потребителей.  "},
-                new Event { Title = "Отключение холодной воды", Image = "onlinetraining.jpg", Venue = "Важно", Duration = "07:30 - 09:30", Date = new DateTime(2020, 6, 9), Description = "В связи с проведением работ по замене узла на ПНС «Ростоши-2». Пос. Ростоши-2. В районе отключения ЦТП и котельные отсутствуют. Подвоз воды по заявкам потребителей.  "},
-                new Event { Title = "Отключение электричества", Image = "dogs.jpg", Venue = "Не важно", Duration = "07:30 - 09:30", Date = new DateTime(2020, 6, 10), Description = "В связи с плановыми ремонтными работами ожидается прекращение подачи электроэнергии в Пос.Ростоши"},
-                new Event { Title = "Плановые ремонтные работы", Image = "bookclub.jpg", Venue = "Важно", Duration = "07:30 - 09:30", Date = new DateTime(2020, 6, 11), Description = "Ул. Салмышская, 44. ГВС нет в районе с 00:00 10.06.2020 до 24:00 13.06.2020. В связи с производством плановых работ по подготовке к ОЗП 2020-2021. "},
-                new Event { Title = "Отключение газа", Image = "tea.jpg", Venue = "Информация", Duration = "07:30 - 09:30", Date = new DateTime(2020, 6, 12), Description = "Отключение газа"}
+                new Event { Title = "Отключение горячей воды", Venue = "Важно", Duration = "07:30 - 09:30", Date = new DateTime(2020, 6, 8), Description = "В связи с проведением работ по замене узла на ПНС «Ростоши-2». Пос. Ростоши-2. В районе отключения ЦТП и котельные отсутствуют. Подвоз воды по заявкам потребителей. аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа"},
+                new Event { Title = "Отключение холодной воды", Venue = "Важно", Duration = "07:30 - 09:30", Date = new DateTime(2020, 6, 9), Description = "В связи с проведением работ по замене узла на ПНС «Ростоши-2». Пос. Ростоши-2. В районе отключения ЦТП и котельные отсутствуют. Подвоз воды по заявкам потребителей.  "},
+                new Event { Title = "Отключение электричества", Venue = "Не важно", Duration = "07:30 - 09:30", Date = new DateTime(2020, 6, 10), Description = "В связи с плановыми ремонтными работами ожидается прекращение подачи электроэнергии в Пос.Ростоши"},
+                new Event { Title = "Плановые ремонтные работы", Venue = "Важно", Duration = "07:30 - 09:30", Date = new DateTime(2020, 6, 11), Description = "Ул. Салмышская, 44. ГВС нет в районе с 00:00 10.06.2020 до 24:00 13.06.2020. В связи с производством плановых работ по подготовке к ОЗП 2020-2021. "},
+                new Event { Title = "Отключение газа", Venue = "Информация", Duration = "07:30 - 09:30", Date = new DateTime(2020, 6, 12), Description = "Отключение газа"}
             };
         }
 
@@ -50,21 +50,24 @@ namespace HackatonProject.Pages
             view.IsVisible = false;
         }
 
+        private async Task ShortNewsColor(View view, Color color)
+        {
+            view.BackgroundColor = color; 
+        }
         private async void MainExpander_Tapped(object sender, EventArgs e)
         {
             var expander = sender as Expander;
-            var imgView = expander.FindByName<Grid>("ImageView");
             var detailsView = expander.FindByName<Grid>("DetailsView");
-
+            var shortnews = expander.FindByName<Grid>("ShortView");
             if (expander.IsExpanded)
             {
-                await OpenAnimation(imgView);
+                await ShortNewsColor(shortnews, Color.LightGray);
                 await OpenAnimation(detailsView);
             }
             else
             {
+                await ShortNewsColor(shortnews, Color.White);
                 await CloseAnimation(detailsView);
-                await CloseAnimation(imgView);
             }
         }
     }
@@ -75,7 +78,6 @@ namespace HackatonProject.Pages
         public string Venue { get; set; }
         public string Duration { get; set; }
         public string Description { get; set; }
-        public string Image { get; set; }
         public DateTime Date { get; set; }
     }
 }
