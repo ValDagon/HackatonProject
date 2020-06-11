@@ -43,7 +43,7 @@
                                 <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" HeightRequest="300">
                                     <Grid x:Name="DetailsView" Grid.Row="0" BackgroundColor="White" Padding="10" IsVisible="False">
                                         <StackLayout>
-                                            <Label Text="{Binding Description}" TextColor="Black" FontSize="20" Opacity="0.85"/>
+                                            <Label Text="{Binding Description}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="20" Opacity="0.85"/>
                                         </StackLayout>
                                     </Grid>
                                 </Grid>
