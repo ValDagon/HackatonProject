@@ -15,35 +15,35 @@
             <Image Source="menu.png" HeightRequest="18" HorizontalOptions="Start"/>
             <Image Source="search.png" HeightRequest="18" HorizontalOptions="End"/>
         </Grid>
-        <CollectionView Grid.Row="1" Margin="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+        <CollectionView Grid.Row="1" Margin="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                         SelectionMode="None" ItemsSource="{Binding MyEvents}">
             <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" ItemSpacing="0"/>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame HasShadow="True" BackgroundColor="Transparent" VerticalOptions="StartAndExpand" 
-                                    HorizontalOptions="FillAndExpand" Padding="5" CornerRadius="10">
+                                    HorizontalOptions="FillAndExpand" Padding="0" CornerRadius="10">
                         <Grid BackgroundColor="White" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
                             <Expander x:Name="MainExpander" Tapped="MainExpander_Tapped" CollapseAnimationLength="200">
                                 <Expander.Header>
                                     <Grid x:Name="ShortView" HorizontalOptions="FillAndExpand" BackgroundColor="White" >
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="0"/>
                                             <ColumnDefinition Width="3*"/>
                                         </Grid.ColumnDefinitions>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                         </StackLayout>
                                         <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" Margin="20">
-                                            <Label Text="{Binding Duration}" Opacity="0.5" TextColor="Black" FontSize="12" Margin="0,-5,0,0"/>
-                                            <Label Text="{Binding Title}" TextColor="Black" FontSize="18"/>
+                                            <Label Text="{Binding Title}" TextColor="Black" FontSize="24"/>
+                                            <Label Text="{Binding Duration}" Opacity="0.7" TextColor="Black" FontSize="14" Margin="0"/>
                                         </StackLayout>
                                     </Grid>
                                 </Expander.Header>
                                 <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" HeightRequest="300">
-                                    <Grid x:Name="DetailsView" Grid.Row="0" BackgroundColor="White" Padding="5" IsVisible="False">
+                                    <Grid x:Name="DetailsView" Grid.Row="0" BackgroundColor="White" Padding="10" IsVisible="False">
                                         <StackLayout>
-                                            <Label Text="{Binding Description}" TextColor="Black" FontSize="24" Opacity="0.85"/>
+                                            <Label Text="{Binding Description}" TextColor="Black" FontSize="20" Opacity="0.85"/>
                                         </StackLayout>
                                     </Grid>
                                 </Grid>
