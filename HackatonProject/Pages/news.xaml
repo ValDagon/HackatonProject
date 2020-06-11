@@ -12,8 +12,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <!--
-
+        <!-- Отключаем тулбар и элементы
         <Grid Padding="30" BackgroundColor="White">
             <Image Source="menu.png" HeightRequest="18" HorizontalOptions="Start"/>
             <Image Source="search.png" HeightRequest="18" HorizontalOptions="End"/>

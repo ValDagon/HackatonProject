@@ -15,7 +15,7 @@ namespace HackatonProject.Pages
         public Page5()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false); //Скрываем верхнюю плашку
+
         }
     }
 }
