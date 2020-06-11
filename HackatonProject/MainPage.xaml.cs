@@ -15,7 +15,7 @@ namespace HackatonProject
     {
         public MainPage()
         {
-            Shell.SetNavBarIsVisible(this, false); // Отключить тулбар
+            SetNavBarIsVisible(this, false); // Отключить тулбар
             InitializeComponent();
         }
     }

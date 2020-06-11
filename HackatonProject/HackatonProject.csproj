@@ -16,19 +16,37 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Pages\Page1.xaml">
+    <Compile Update="Pages\news.xaml.cs">
+      <DependentUpon>news.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\finance.xaml.cs">
+      <DependentUpon>finance.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\analytics.xaml.cs">
+      <DependentUpon>analytics.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\request.xaml.cs">
+      <DependentUpon>request.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\service.xaml.cs">
+      <DependentUpon>service.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Pages\news.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Page2.xaml">
+    <EmbeddedResource Update="Pages\service.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Page3.xaml">
+    <EmbeddedResource Update="Pages\request.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Page4.xaml">
+    <EmbeddedResource Update="Pages\finance.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Page5.xaml">
+    <EmbeddedResource Update="Pages\analytics.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

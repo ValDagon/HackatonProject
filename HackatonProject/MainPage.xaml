@@ -6,7 +6,7 @@
        x:Class="HackatonProject.MainPage">
 
     <TabBar>
-        <Tab Title="Новости" Icon="news.png">
+        <Tab Title="События" Icon="news.png">
             <ShellContent ContentTemplate="{DataTemplate Pages:Page1}">
                 
             </ShellContent>
@@ -28,7 +28,7 @@
         </Tab>
         <Tab Title="Счётчики" Icon="analytics.png">
             <ShellContent ContentTemplate="{DataTemplate Pages:Page5}">
-                
+
             </ShellContent>
         </Tab>
     </TabBar>

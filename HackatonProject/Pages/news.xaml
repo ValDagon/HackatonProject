@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HackatonProject.Pages.Page1"
+             BackgroundImage="bgNews.jpg">
+
+    <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--
+
+        <Grid Padding="30" BackgroundColor="White">
+            <Image Source="menu.png" HeightRequest="18" HorizontalOptions="Start"/>
+            <Image Source="search.png" HeightRequest="18" HorizontalOptions="End"/>
+        </Grid>
+        -->
+        <CollectionView Grid.Row="1" Margin="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                        SelectionMode="None" ItemsSource="{Binding MyEvents}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame HasShadow="True" BackgroundColor="Transparent" VerticalOptions="StartAndExpand" 
+                                    HorizontalOptions="FillAndExpand" Padding="0" CornerRadius="10">
+                        <Grid BackgroundColor="White" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                            <Expander x:Name="MainExpander" Tapped="MainExpander_Tapped" CollapseAnimationLength="200">
+                                <Expander.Header>
+                                    <Grid x:Name="ShortView" HorizontalOptions="FillAndExpand" BackgroundColor="White" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0"/>
+                                            <ColumnDefinition Width="3*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" Margin="20">
+                                            <Label Text="{Binding Title}" TextColor="Black" FontSize="24"/>
+                                            <Label Text="{Binding Duration}" Opacity="0.7" TextColor="Black" FontSize="14" Margin="0"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </Expander.Header>
+                                <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" HeightRequest="300">
+                                    <Grid x:Name="DetailsView" Grid.Row="0" BackgroundColor="White" Padding="10" IsVisible="False">
+                                        <StackLayout>
+                                            <Label x:Name="TextDescription" Text="{Binding Description}" TextColor="Black" FontSize="20" Opacity="0.85"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </Grid>
+                            </Expander>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
