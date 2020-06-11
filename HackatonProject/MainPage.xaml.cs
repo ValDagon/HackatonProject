@@ -15,6 +15,7 @@ namespace HackatonProject
     {
         public MainPage()
         {
+            Shell.SetNavBarIsVisible(this, false);
             InitializeComponent();
         }
     }
