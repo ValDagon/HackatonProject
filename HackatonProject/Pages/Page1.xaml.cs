@@ -14,6 +14,7 @@ namespace HackatonProject.Pages
     {
         public Page1()
         {
+//            Shell.SetNavBarIsVisible(this, false);
             InitializeComponent();
             MyEvents = GetEvents();
             this.BindingContext = this;

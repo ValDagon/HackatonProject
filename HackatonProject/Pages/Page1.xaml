@@ -6,24 +6,28 @@
              mc:Ignorable="d"
              x:Class="HackatonProject.Pages.Page1">
 
-    <Grid BackgroundColor="White" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <Grid BackgroundColor="#1E1E1E" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid Padding="30" BackgroundColor="White">
+            <Image Source="menu.png" HeightRequest="18" HorizontalOptions="Start"/>
+            <Image Source="search.png" HeightRequest="18" HorizontalOptions="End"/>
+        </Grid>
         <CollectionView Grid.Row="1" Margin="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                         SelectionMode="None" ItemsSource="{Binding MyEvents}">
             <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" ItemSpacing="1"/>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="0"/>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame HasShadow="True" BackgroundColor="Transparent" VerticalOptions="StartAndExpand" 
-                                    HorizontalOptions="FillAndExpand" Padding="0">
+                                    HorizontalOptions="FillAndExpand" Padding="5">
                         <Grid VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
                             <Expander x:Name="MainExpander" Tapped="MainExpander_Tapped" CollapseAnimationLength="500">
                                 <Expander.Header>
-                                    <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#33FFCC" >
+                                    <Grid HorizontalOptions="FillAndExpand" BackgroundColor="White" >
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="3*"/>
@@ -49,7 +53,7 @@
                                     <Grid x:Name="ImageView" IsVisible="False">
                                         <Image Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
                                     </Grid>
-                                    <Grid x:Name="DetailsView" Grid.Row="1" BackgroundColor="LightGray" Padding="20" IsVisible="False">
+                                    <Grid x:Name="DetailsView" Grid.Row="1" BackgroundColor="White" Padding="20" IsVisible="False">
                                         <StackLayout>
                                             <Label Text="Подробности" TextColor="Black" FontSize="12" FontAttributes="Bold" Opacity="0.85"/>
                                             <Label Text="{Binding Description}" TextColor="Black" FontSize="12" Opacity="0.85"/>
