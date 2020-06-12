@@ -28,6 +28,7 @@
                     <Frame HasShadow="True" BackgroundColor="Transparent" VerticalOptions="StartAndExpand" 
                                     HorizontalOptions="FillAndExpand" Padding="0" CornerRadius="10">
                         <Grid BackgroundColor="White" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                            <!-- Сама новость -->
                             <Expander x:Name="MainExpander" Tapped="MainExpander_Tapped" CollapseAnimationLength="200">
                                 <Expander.Header>
                                     <Grid x:Name="ShortView" HorizontalOptions="FillAndExpand" BackgroundColor="White" >
@@ -37,15 +38,18 @@
                                         </Grid.ColumnDefinitions>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                         </StackLayout>
+                                        <!-- Текст на новости -->
                                         <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" Margin="20">
                                             <Label Text="{Binding Title}" TextColor="Black" FontSize="24"/>
                                             <Label Text="{Binding Duration}" Opacity="0.7" TextColor="Black" FontSize="14" Margin="0"/>
                                         </StackLayout>
                                     </Grid>
                                 </Expander.Header>
+                                <!-- Текст по раскрытию новости -->
                                 <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" HeightRequest="300">
                                     <Grid x:Name="DetailsView" Grid.Row="0" BackgroundColor="White" Padding="10" IsVisible="False">
                                         <StackLayout>
+                                            <!-- Подробное описание -->
                                             <Label x:Name="TextDescription" Text="{Binding Description}" TextColor="Black" FontSize="20" Opacity="0.85"/>
                                         </StackLayout>
                                     </Grid>

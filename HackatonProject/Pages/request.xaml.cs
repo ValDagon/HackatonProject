@@ -1,20 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using HackatonProject.Models;
+using HackatonProject.ViewModel;
+using HackatonProject.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace HackatonProject.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Request : ContentPage
     {
         public Request()
         {
             InitializeComponent();
+            BindingContext = new RequestViewModel();
         }
+
+        private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
+        {
+            var mydetails = e.Item as RequestModel;
+            await Navigation.PushAsync(new RequestDetail(mydetails.Name, mydetails.Ingredients, mydetails.Image));
+
+        }
+
     }
 }
