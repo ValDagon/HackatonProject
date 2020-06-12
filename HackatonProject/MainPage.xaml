@@ -7,27 +7,27 @@
 
     <TabBar>
         <Tab Title="События" Icon="news.png">
-            <ShellContent ContentTemplate="{DataTemplate Pages:Page1}">
+            <ShellContent ContentTemplate="{DataTemplate Pages:News}">
                 
             </ShellContent>
         </Tab>
-        <Tab Title="Услуги" Icon="construct.png">
-            <ShellContent ContentTemplate="{DataTemplate Pages:Page2}">
+        <Tab Title="Заявки" Icon="construct.png">
+            <ShellContent ContentTemplate="{DataTemplate Pages:Request}">
                 
             </ShellContent>
         </Tab>
-        <Tab Title="Заявки" Icon="clipboard.png">
-            <ShellContent ContentTemplate="{DataTemplate Pages:Page3}">
+        <Tab Title="Чат" Icon="chat.png">
+            <ShellContent ContentTemplate="{DataTemplate Pages:Chat}">
                 
             </ShellContent>
         </Tab>
         <Tab Title="Финансы" Icon="cash.png">
-            <ShellContent ContentTemplate="{DataTemplate Pages:Page4}">
+            <ShellContent ContentTemplate="{DataTemplate Pages:Finance}">
                 
             </ShellContent>
         </Tab>
         <Tab Title="Счётчики" Icon="analytics.png">
-            <ShellContent ContentTemplate="{DataTemplate Pages:Page5}">
+            <ShellContent ContentTemplate="{DataTemplate Pages:Analytics}">
 
             </ShellContent>
         </Tab>

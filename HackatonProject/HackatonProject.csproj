@@ -28,8 +28,8 @@
     <Compile Update="Pages\request.xaml.cs">
       <DependentUpon>request.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\service.xaml.cs">
-      <DependentUpon>service.xaml</DependentUpon>
+    <Compile Update="Pages\chat.xaml.cs">
+      <DependentUpon>Chat.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -37,7 +37,7 @@
     <EmbeddedResource Update="Pages\news.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\service.xaml">
+    <EmbeddedResource Update="Pages\Chat.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\request.xaml">

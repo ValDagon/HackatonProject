@@ -10,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace HackatonProject.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page4 : ContentPage
+    public partial class Finance : ContentPage
     {
-        public Page4()
+        public Finance()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false); //Скрываем верхнуюю плашку
         }
     }
 }

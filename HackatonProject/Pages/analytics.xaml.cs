@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace HackatonProject.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page5 : ContentPage
+    public partial class Analytics : ContentPage
     {
-        public Page5()
+        public Analytics()
         {
             InitializeComponent();
 

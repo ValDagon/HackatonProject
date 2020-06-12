@@ -10,9 +10,9 @@ using Xamarin.Forms;
 namespace HackatonProject.Pages
 {
     [DesignTimeVisible(false)]
-    public partial class Page1 : ContentPage
+    public partial class News : ContentPage
     {
-        public Page1()
+        public News()
         {
 //            Shell.SetNavBarIsVisible(this, false);
             InitializeComponent();
