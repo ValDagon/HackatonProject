@@ -6,10 +6,10 @@
              Title="HackatonProject">
     
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding FoodList}"
-                   HasUnevenRows="true"
-                   SeparatorVisibility="None"
-                   ItemTapped="OnItemSelected">
+        <ListView ItemsSource="{Binding FoodList}" 
+                  HasUnevenRows="true" 
+                  SeparatorVisibility="None" 
+                  ItemTapped="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -22,30 +22,19 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-
-                            <controls:CircleImage
-                                
-                                       HeightRequest="60"
-                                        HorizontalOptions="CenterAndExpand"
-                                        VerticalOptions="CenterAndExpand"
-                                        Aspect="AspectFill"
-                                       WidthRequest="66"
-                                       Grid.RowSpan="2"
-                                       Source="{Binding Image}"/>
-                            <Label Grid.Column="1"
-                                       Text="{Binding Name}"
-                                       VerticalOptions="End"/>
-                            <Label Grid.Column="1"
-                                       Grid.Row="1"
-                                       VerticalOptions="Start"
-                                       Text="{Binding Detail}"/>
+                            <controls:CircleImage HeightRequest="64" WidthRequest="64"
+                                                  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                                  Aspect="AspectFill"
+                                                  Grid.RowSpan="3"
+                                                  Source="{Binding Image}"/>
+                            <Label Grid.Column="1" Grid.Row="0" VerticalOptions="End" Text="{Binding Name}" FontSize="14" FontAttributes="Bold" TextColor="Gray"/>
+                            <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Start" Text="{Binding Detail}" FontSize="16" TextColor="Black"/>
+                            <Label Grid.Column="1" Grid.Row="2" VerticalOptions="Start" BackgroundColor="{Binding BackgroundColor}" Text="{Binding Status}" FontSize="14" HorizontalOptions="Start" Padding="1" Margin="1" TextColor="{Binding TextColor}"/>
                         </Grid>
                     </ViewCell>
                     <!-- <ViewCell Text="" TextColor="Black"/>-->
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-
     </ContentPage.Content>
 </ContentPage>

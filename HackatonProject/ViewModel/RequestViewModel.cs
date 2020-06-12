@@ -10,11 +10,12 @@ namespace HackatonProject.ViewModel
 
         public RequestViewModel()
         {
-            FoodList = new ObservableCollection<RequestModel>();
-            FoodList.Add(new RequestModel { Name = "Test1", Image = "https://media.istockphoto.com/photos/double-cheese-and-bacon-cheeseburger-picture-id511484502?k=6&m=511484502&s=612x612&w=0&h=2d8oTGH_E7KHkd4TIdftWIxjLsBP3CfdF44zy65FD0o=", Detail = "This is our burger", Ingredients = "This is our detail page details to be listed" });
-            //you can add here multiple list items 
-            //FoodList.Add(new MyListModel { Name = "Test2", Image = "https://media.istockphoto.com/photos/double-cheese-and-bacon-cheeseburger-picture-id511484502?k=6&m=511484502&s=612x612&w=0&h=2d8oTGH_E7KHkd4TIdftWIxjLsBP3CfdF44zy65FD0o=", Detail = "This is our burger",Ingredients="This is our detail page details to be listed" });
-
+            FoodList = new ObservableCollection<RequestModel>
+            {
+                new RequestModel { Name = "Прорвало трубу", Image = "alert.png", Detail = "10 минут назад прорвало трубу в ванной комнате", MoreDetail = "10 минут назад прорвало трубу в ванной комнате", Status = "Рассматривается", BackgroundColor = "#0099FF", TextColor = "Black" },
+                new RequestModel { Name = "Нет света в подъезде", Image = "in_working.png", Detail = "В подъезде уже два дня не работает свет", MoreDetail = "10 минут назад прорвало трубу в ванной комнате", Status = "В работе", BackgroundColor = "Black", TextColor = "White" },
+                new RequestModel { Name = "Отопление", Image = "ready.png", Detail = "Батареи плохо греют", MoreDetail = "10 минут назад прорвало трубу в ванной комнате", Status = "Выполнена", BackgroundColor = "#00FF66", TextColor = "Black"}
+            };
         }
     }
 }

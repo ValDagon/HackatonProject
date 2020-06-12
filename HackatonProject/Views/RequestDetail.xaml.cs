@@ -6,17 +6,13 @@ namespace HackatonProject.Views
 {
     public partial class RequestDetail : ContentPage
     {
-        public RequestDetail(string Name, string Ingredients, string source)
+        public RequestDetail(string Name, string MoreDetail, string source, string Status, string TextColor, string BackgroundColor)
         {
             InitializeComponent();
 
             MyItemNameShow.Text = Name;
-            MyIngrediantItemShow.Text = Ingredients;
-            MyImageCall.Source = new UriImageSource()
-            {
-                Uri = new Uri(source)
-            };
-
+            MyIngrediantItemShow.Text = MoreDetail;
+            MyImageCall.Source = source;
         }
     }
 }
