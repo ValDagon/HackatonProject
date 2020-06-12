@@ -26,8 +26,8 @@
                 
             </ShellContent>
         </Tab>
-        <Tab Title="Счётчики" Icon="analytics.png">
-            <ShellContent ContentTemplate="{DataTemplate Pages:Analytics}">
+        <Tab Title="Собрания и опросы" Icon="meeting.png">
+            <ShellContent ContentTemplate="{DataTemplate Pages:Meeting}">
 
             </ShellContent>
         </Tab>

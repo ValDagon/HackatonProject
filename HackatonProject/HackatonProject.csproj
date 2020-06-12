@@ -22,8 +22,8 @@
     <Compile Update="Pages\finance.xaml.cs">
       <DependentUpon>finance.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\analytics.xaml.cs">
-      <DependentUpon>analytics.xaml</DependentUpon>
+    <Compile Update="Pages\meeting.xaml.cs">
+      <DependentUpon>meeting.xaml</DependentUpon>
     </Compile>
     <Compile Update="Pages\request.xaml.cs">
       <DependentUpon>request.xaml</DependentUpon>
@@ -46,7 +46,7 @@
     <EmbeddedResource Update="Pages\finance.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\analytics.xaml">
+    <EmbeddedResource Update="Pages\meeting.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
