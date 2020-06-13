@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HackatonProject.Views.RequestDetail">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HackatonProject.Views.RequestDetail">
     <ContentPage.Content>
-
         <StackLayout HorizontalOptions="Center">
-            <Image x:Name="MyImageCall" HeightRequest="100" WidthRequest="100"/>
-            <Label x:Name="MyItemNameShow" HorizontalTextAlignment="Center"/>
-            <Label x:Name="MyIngrediantItemShow" Margin="20,20" FontSize="Small"/>
+            <Label x:Name="MyItemNameShow" Margin ="1" Padding="5" HorizontalTextAlignment="Center"/>
+            <Label x:Name="MyIngrediantItemShow" Margin="5,5" FontSize="Medium" TextColor="Black"/>
+            <Image x:Name="MyImageCall" HeightRequest="256" WidthRequest="256"/>
+            <Label x:Name="CommentTitle" Margin="5" FontSize="Small"/>
+            <Label x:Name="CommentDetail" Margin="5" FontSize="Medium" TextColor="Black"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

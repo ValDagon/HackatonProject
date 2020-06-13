@@ -11,6 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="CustomFonts\Helvetica.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="CustomFonts\Helvetica.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.847" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />

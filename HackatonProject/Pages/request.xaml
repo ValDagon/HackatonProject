@@ -13,7 +13,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                        <Grid Padding="5" RowSpacing="5" ColumnSpacing="5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
@@ -27,9 +27,18 @@
                                                   Aspect="AspectFill"
                                                   Grid.RowSpan="3"
                                                   Source="{Binding Image}"/>
-                            <Label Grid.Column="1" Grid.Row="0" VerticalOptions="End" Text="{Binding Name}" FontSize="14" FontAttributes="Bold" TextColor="Gray"/>
-                            <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Start" Text="{Binding Detail}" FontSize="16" TextColor="Black"/>
-                            <Label Grid.Column="1" Grid.Row="2" VerticalOptions="Start" BackgroundColor="{Binding BackgroundColor}" Text="{Binding Status}" FontSize="14" HorizontalOptions="Start" Padding="1" Margin="1" TextColor="{Binding TextColor}"/>
+                            <Label Grid.Column="1" Grid.Row="0" VerticalOptions="End" Text="{Binding Name}" TextColor="Gray"
+                                   FontFamily="Helvetica" FontSize="Small" FontAttributes="Bold"/>
+                            
+                            <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Start" Text="{Binding Detail}" TextColor="Black"
+                                   FontFamily="Helvetica" FontSize="Medium"/>
+                            
+                            <Label Grid.Column="1" Grid.Row="2" VerticalOptions="Start" BackgroundColor="{Binding BackgroundColor}" 
+                                   FontFamily="Helvetica" Text="{Binding Status}" FontSize="Medium" TextColor="{Binding TextColor}"
+                                   HorizontalOptions="Start" />
+
+                            <Label Grid.Column="1" Grid.Row="3" VerticalOptions="Start" Text="__________________________________________"
+                                   TextColor="Black" FontAttributes="Bold" HorizontalOptions="FillAndExpand"/>
                         </Grid>
                     </ViewCell>
                     <!-- <ViewCell Text="" TextColor="Black"/>-->

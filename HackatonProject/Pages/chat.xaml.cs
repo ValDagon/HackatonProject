@@ -15,6 +15,7 @@ namespace HackatonProject.Pages
         public Chat()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

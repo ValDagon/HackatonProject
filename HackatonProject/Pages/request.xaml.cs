@@ -18,7 +18,7 @@ namespace HackatonProject.Pages
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
             var mydetails = e.Item as RequestModel;
-            await Navigation.PushAsync(new RequestDetail(mydetails.Name, mydetails.MoreDetail, mydetails.Image, mydetails.Status, mydetails.TextColor, mydetails.BackgroundColor));
+            await Navigation.PushAsync(new RequestDetail(mydetails.Name, mydetails.MoreDetail, mydetails.MoreDetailImage, mydetails.CommentTitle, mydetails.CommentDetail));
         }
 
     }
