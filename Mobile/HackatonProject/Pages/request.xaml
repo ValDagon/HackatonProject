@@ -6,7 +6,7 @@
              Title="HackatonProject">
     
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding FoodList}" 
+        <ListView ItemsSource="{Binding RequestList}" 
                   HasUnevenRows="true" 
                   SeparatorVisibility="None" 
                   ItemTapped="OnItemSelected">

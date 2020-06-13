@@ -1,4 +1,7 @@
-﻿using System;
+﻿using HackatonProject.ViewModels.MicroCharts;
+using HackatonProject.Views.MicroCharts;
+using Microcharts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -17,6 +20,7 @@ namespace HackatonProject
         {
             SetNavBarIsVisible(this, false); // Отключить тулбар
             InitializeComponent();
+
         }
     }
 }

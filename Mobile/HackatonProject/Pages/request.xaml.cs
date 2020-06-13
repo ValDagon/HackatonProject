@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using HackatonProject.Models;
 using HackatonProject.ViewModel;
 using HackatonProject.Views;
+using SkiaSharp;
 using Xamarin.Forms;
 
 namespace HackatonProject.Pages

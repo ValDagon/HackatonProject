@@ -6,10 +6,10 @@ namespace HackatonProject.ViewModel
 {
     public class RequestViewModel
     {
-        public ObservableCollection<RequestModel> FoodList { get; set; }
+        public ObservableCollection<RequestModel> RequestList { get; set; }
         public RequestViewModel()
         {
-            FoodList = new ObservableCollection<RequestModel>
+            RequestList = new ObservableCollection<RequestModel>
             {
                 new RequestModel { Name = "Номер заявки: 12", Image = "alert.png", Detail = "Прорвало трубу", 
                     MoreDetail = "10 минут назад прорвало трубу с горячей водой в ванной комнате", MoreDetailImage = "water_problem.jpg", Status = "Рассматривается", BackgroundColor = "#00CCFF", TextColor = "Black", 

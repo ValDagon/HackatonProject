@@ -6,10 +6,6 @@
              mc:Ignorable="d"
              x:Class="HackatonProject.Pages.Finance">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Финансы"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

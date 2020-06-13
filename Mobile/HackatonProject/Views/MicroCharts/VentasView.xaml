@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HackatonProject.Views.MicroCharts.VentasView"
+             xmlns:charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" xmlns:controls="http://xamarin.com/schemas/2014/forms/design"
+             BackgroundColor="White"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <Grid RowSpacing="5">
+            <charts:ChartView Grid.Row ="0" x:Name="CV" Chart="{Binding VentasChart}" HeightRequest="500"/>
+            <ListView x:Name="LV" 
+                      Grid.Row="1"
+                ItemsSource="{Binding FinanceList}" 
+                      HasUnevenRows="true" 
+                      SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5" RowSpacing="0" ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image HeightRequest="48" WidthRequest="48"
+                                                      HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                                      Aspect="AspectFill"
+                                                      Grid.RowSpan="1"
+                                                      Source="{Binding Image}"
+                                   Grid.Row="0"/>
+
+                                <Label Grid.Column="1" Grid.Row="0" VerticalOptions="Center" Text="{Binding Detail}" TextColor="Black"
+                                       FontFamily="Helvetica" FontSize="Medium"/>
+                            </Grid>
+
+                    </ViewCell>
+
+                    <!--<ViewCell Text="" TextColor="Black"/>-->
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
