@@ -1,0 +1,437 @@
+﻿<Window x:Class="NavigationDrawerPopUpMenu2.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NavigationDrawerPopUpMenu2"
+        xmlns:lvc= "clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        mc:Ignorable="d"
+        Title="Window1"     
+         Height="600" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Background="#FFDEDEDE">
+        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" Margin="0,0,4,0">
+
+            <materialDesign:PackIcon Kind="BlurOn" Height="540" Width="1010" >
+                <materialDesign:PackIcon.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF7D27FF" Offset="1"/>
+                        <GradientStop Color="#FFBB2086"/>
+                    </LinearGradientBrush>
+                </materialDesign:PackIcon.Foreground>
+            </materialDesign:PackIcon>
+
+            <materialDesign:Card Padding="8"  Foreground="{x:Null}" Margin="50,45,611,358" Grid.RowSpan="2">
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF7D27FF" Offset="1"/>
+                        <GradientStop Color="#FFBB2086"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+            </materialDesign:Card>
+            <StackPanel Margin="73,63,676,8">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="White" Text="Название оргнанизации: "/>
+                    <TextBlock Foreground="#FFFDF9F9" Text="УК «УКХ РЭС №1»" Margin="5 0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="White" Text="Город оргнанизации: "/>
+                    <TextBlock Text="Новотроицк" Foreground="#FFFDF9F9" Margin="5 0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="White" Text="Адрес организации: "/>
+                    <TextBlock Text="ул. Советская, д. 156" Foreground="#FFFDF9F9" Margin="5 0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="White" Text="Телефон организации: "/>
+                    <TextBlock  Text="8 (35376) 424-34" Foreground="#FFFDF9F9" Margin="5 0"/>
+                </StackPanel>
+            </StackPanel>
+            <materialDesign:RatingBar Value="3" x:Name="BasicRatingBar" Margin="258,149,631,216" Foreground="White" Background="Transparent"/>
+            <Label Content="Рейтинг организации" HorizontalAlignment="Left" Margin="244,132,0,0" VerticalAlignment="Top" Height="26" Width="155" FontFamily="Trebuchet MS" Foreground="White" FontSize="14" Grid.RowSpan="2">
+                <Label.BorderBrush>
+                    <ImageBrush/>
+                </Label.BorderBrush>
+                <Label.Background>
+                    <ImageBrush/>
+                </Label.Background>
+            </Label>
+            <materialDesign:PackIcon Kind="ArrowBottomRightThick" Margin="348,43,0,0" Height="34" Width="75" RenderTransformOrigin="0.5,0.5" >
+                <materialDesign:PackIcon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90.084"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:PackIcon.RenderTransform>
+            </materialDesign:PackIcon>
+            <materialDesign:PackIcon Kind="ArrowBottomRightThick" Margin="27,150,0,0" Height="34" Width="75" RenderTransformOrigin="0.5,0.5" >
+                <materialDesign:PackIcon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-270.009"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:PackIcon.RenderTransform>
+            </materialDesign:PackIcon>
+
+            <materialDesign:Card Padding="8" Margin="480,45,35,44" Foreground="{x:Null}" Grid.RowSpan="2">
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF51C40"/>
+                        <GradientStop Color="#FFD89B65" Offset="1"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+            </materialDesign:Card>
+            <Label x:Name="label_Copy2" Content="ЖКУ и Капремонт" HorizontalAlignment="Left" Height="28" Margin="507,57,0,0" VerticalAlignment="Top" Width="148" FontSize="16" Foreground="#DDFBFBFB">
+                <Label.BorderBrush>
+                    <ImageBrush/>
+                </Label.BorderBrush>
+                <Label.Background>
+                    <ImageBrush/>
+                </Label.Background>
+            </Label>
+            <Label x:Name="label_Copy3" Content="1 500 000₽" HorizontalAlignment="Left" Height="50" Margin="666,102,0,0" VerticalAlignment="Top" Width="116" FontSize="18" FontWeight="Bold" Foreground="#DDFBFBFB" Grid.RowSpan="2">
+                <Label.BorderBrush>
+                    <ImageBrush/>
+                </Label.BorderBrush>
+                <Label.Background>
+                    <ImageBrush/>
+                </Label.Background>
+            </Label>
+            <Label Content="Завки" HorizontalAlignment="Left" Margin="521,142,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#DDFBFBFB">
+                <Label.BorderBrush>
+                    <ImageBrush/>
+                </Label.BorderBrush>
+                <Label.Background>
+                    <ImageBrush/>
+                </Label.Background>
+            </Label>
+            <Label Content="Процент выполненных заявок" HorizontalAlignment="Left" Margin="500,382,0,0" VerticalAlignment="Top" Foreground="#DDFBFBFB">
+                <Label.BorderBrush>
+                    <ImageBrush/>
+                </Label.BorderBrush>
+                <Label.Background>
+                    <ImageBrush/>
+                </Label.Background>
+            </Label>
+
+
+
+
+
+            <materialDesign:Card Padding="8" Margin="50,228,591,44" Foreground="{x:Null}">
+                <materialDesign:Card.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF016CFD" Offset="1"/>
+                        <GradientStop Color="#FF00E4FF"/>
+                    </LinearGradientBrush>
+                </materialDesign:Card.Background>
+            </materialDesign:Card>
+            <materialDesign:TransitioningContent  OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Margin="61,228,611,68">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,-16,0" Width="342">
+                    <StackPanel>
+                        <TextBlock Text="10:30 13.06" FontFamily="Cooper Black" Foreground="#FF2573AA"/>
+                        <StackPanel Margin="10" Width="150" Height="104" HorizontalAlignment="Left">
+
+                            <TextBlock Text="Собрание подъезда" FontSize="14" FontFamily="Champagne &amp; Limousines" FontWeight="Bold" Margin="5"/>
+                            <TextBlock FontSize="10" FontFamily="Champagne &amp; Limousines" Margin="5" TextWrapping="Wrap">
+                            В доме №34 по улице Зеленая  будет проводится собрание жителей по вопросу установки домофонной двери
+                            </TextBlock>
+                        </StackPanel>
+                        <Button FontFamily="Champagne &amp; Limousines" Content="Перейти" FontSize="12" Margin="25" Background="#FF9CADE6" BorderBrush="White" Height="29" Width="103"/>
+                    </StackPanel>
+                    <Border  BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Width="167">
+                        <ListView Margin="0,0,9,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                            <ListViewItem HorizontalAlignment="Left" Width="164" Height="48"  >
+                                <Grid HorizontalAlignment="Left" Width="154"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="1*"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="Number1Box" Height="42" Foreground="White" Width="26"  />
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
+                                        <TextBlock Text="Выбор главы дома" Foreground="White" FontSize="10"/>
+                                        <TextBlock Text="Ул.Ленина дом 56" Foreground="White" FontSize="10"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="2" Text="12.06" Foreground="White" FontSize="8" VerticalAlignment="Center" />
+
+                                </Grid>
+                            </ListViewItem>
+                            <ListViewItem HorizontalAlignment="Left" Width="164"  >
+                                <Grid HorizontalAlignment="Left" Width="154"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="1*"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="Number2Box" Height="42" Foreground="White" Width="26"  />
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
+                                        <TextBlock Text="Собрание жителей" Foreground="White" FontSize="10"/>
+                                        <TextBlock Text="Ул.Пушкина дом 26" Foreground="White" FontSize="10"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="2" Text="14.06" Foreground="White" FontSize="8" VerticalAlignment="Center" />
+
+                                </Grid>
+                            </ListViewItem>
+                            <ListViewItem HorizontalAlignment="Left" Width="164"  >
+                                <Grid HorizontalAlignment="Left" Width="154"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="1*"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="Number3Box" Height="42" Foreground="White" Width="26"  />
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
+                                        <TextBlock Text="Капитальный ремонт" Foreground="White" FontSize="10"/>
+                                        <TextBlock Text="Ул.Ломоносова дом 106" Foreground="White" FontSize="10"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="2" Text="15.06" Foreground="White" FontSize="8" VerticalAlignment="Center" />
+
+                                </Grid>
+                            </ListViewItem>
+                            <ListViewItem HorizontalAlignment="Left" Width="164"  >
+                                <Grid HorizontalAlignment="Left" Width="154"  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="1*"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="Number4Box" Height="42" Foreground="White" Width="26"  />
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
+                                        <TextBlock Text="Замена труб" Foreground="White" FontSize="10"/>
+                                        <TextBlock Text="Ул.Гагарина дом 22" Foreground="White" FontSize="10"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="2" Text="15.06" Foreground="White" FontSize="8" VerticalAlignment="Center" />
+
+                                </Grid>
+                            </ListViewItem>
+
+                        </ListView>
+                    </Border>
+
+                </StackPanel>
+
+            </materialDesign:TransitioningContent>
+
+
+
+
+
+
+
+            <lvc:Gauge
+                   From="0" To="100" Value="50"
+                   LabelsVisibility="Collapsed" Margin="530,324,376,-21">
+                <lvc:Gauge.GaugeActiveFill>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Yellow" Offset="0.0" />
+                        <GradientStop Color="Orange" Offset="0.5" />
+                        <GradientStop Color="Red" Offset="1.0" />
+                    </LinearGradientBrush>
+                </lvc:Gauge.GaugeActiveFill>
+            </lvc:Gauge>
+
+            <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Left" Margin="688,63,62,326" Grid.RowSpan="2">
+                <lvc:CartesianChart.AxisX>
+
+                    <lvc:Axis Title="" Labels="{Binding Labels}"></lvc:Axis>
+
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title=""  ></lvc:Axis>
+
+                </lvc:CartesianChart.AxisY>
+            </lvc:CartesianChart>
+
+            <Wpf:PieChart LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="False" DataTooltip="{x:Null}" Margin="521,176,355,187">
+                <Wpf:PieChart.Series>
+                    <Wpf:PieSeries Title="Ремонт" Values="10" DataLabels="True"
+                               LabelPoint="{Binding PointLabel}"/>
+                    <Wpf:PieSeries Title="Услуги" Values="25" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                    <Wpf:PieSeries Title="Сообщения" Values="25" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                    <Wpf:PieSeries Title="Подтверждение профиля" Values="60" DataLabels="True" 
+                               LabelPoint="{Binding PointLabel}"/>
+                </Wpf:PieChart.Series>
+
+
+            </Wpf:PieChart>
+
+
+            <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Margin="676,90,49,65" Grid.Row="1">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                    <StackPanel>
+                        <TextBlock Text="10:30 13.06" FontFamily="Cooper Black" Foreground="#FFC00000"/>
+                        <StackPanel Margin="10" Width="150" Height="104" HorizontalAlignment="Left">
+                            <TextBlock Text="Последняя заявка" FontSize="12" FontFamily="Cooper Black" Foreground="#FFC00000"/>
+                            <TextBlock Text="Собрание подъезда" FontSize="14" FontFamily="Champagne &amp; Limousines" FontWeight="Bold" Margin="5"/>
+                            <TextBlock FontSize="10" FontFamily="Champagne &amp; Limousines" Margin="5" TextWrapping="Wrap">
+                            В доме №34 по улице Зеленая  будет проводится собрание жителей по вопросу установки домофонной двери
+                            </TextBlock>
+                        </StackPanel>
+                        <Button FontFamily="Champagne &amp; Limousines" Content="Перейти" FontSize="12" Margin="25" Background="#FFF33421" BorderBrush="#FFE06713" Height="22" Width="100"/>
+                    </StackPanel>
+                    <Image  Width="127" Height="129" Source="obsluzhivanie-mnogokvartirnye-1.png" Stretch="UniformToFill"/>
+                </StackPanel>
+
+            </materialDesign:TransitioningContent>
+            <materialDesign:PackIcon Kind="AngleRight" Margin="466,465,0,0" Height="31" Width="64" />
+            <materialDesign:PackIcon Kind="AngleRight" Margin="923,46,0,0" Height="31" Width="64" RenderTransformOrigin="0.5,0.5" >
+                <materialDesign:PackIcon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180.095"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:PackIcon.RenderTransform>
+            </materialDesign:PackIcon>
+
+            <materialDesign:PackIcon Kind="ChevronDoubleRight" Margin="386,218,0,0" Height="40" Width="36" RenderTransformOrigin="0.5,0.5" >
+                <materialDesign:PackIcon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-42.169"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:PackIcon.RenderTransform>
+            </materialDesign:PackIcon>
+            <materialDesign:PackIcon Kind="ChevronDoubleRight" Margin="48,459,0,0" Height="40" Width="36" RenderTransformOrigin="0.5,0.5" >
+                <materialDesign:PackIcon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-42.169"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:PackIcon.RenderTransform>
+            </materialDesign:PackIcon>
+            <TextBlock Foreground="White" Text="Место по Оренбургской обл.: " Margin="76,158,794,366" FontSize="10"/>
+
+            <materialDesign:PackIcon Kind="Number7BoxMultipleOutline" Margin="216,152,0,0" Width="23" Height="22" />
+
+
+
+
+        </Grid>
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF673AB7">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
+            </Grid.Effect>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="UKX_RES_1" VerticalAlignment="Center" FontSize="16"/>
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" >
+                    <StackPanel Width="150">
+                        <Button Content="Settings"/>
+                        <Button Content="Account"/>
+                        <Button Content="Help"/>
+                        <Separator/>
+                        <Button Content="Logout"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+                <Button  HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"  Click="Button1_Click">
+                    <materialDesign:PackIcon Kind="Minus"  Height="28" Width="24"/>
+
+                </Button>
+                <Button  HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"  Click="Button_Click">
+                    <materialDesign:PackIcon Kind="Power" Height="22" Width="24"/>
+                </Button>
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontFamily="Sitka Banner">HackatonProject</TextBlock>
+        </Grid>
+        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF673AB7">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
+            </Grid.Effect>
+            <StackPanel>
+                <Grid Height="60" Background="White" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Button x:Name="ButtonOpenMenu" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonOpenMenu_Click">
+                        <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
+                    </Button>
+                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCloseMenu_Click">
+                        <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
+                    </Button>
+
+                    <Image Height="80" VerticalAlignment="Bottom"/>
+                </Grid>
+                <ListView x:Name="ListViewMenu" Foreground="#DD000000" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" Background="#FF673AB7" BorderBrush="#89000000">
+                    <ListViewItem x:Name="ItemHome" Height="60" Background="#00000000" BorderBrush="#00000000" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"  >
+                        <StackPanel Orientation="Horizontal"  >
+                            <materialDesign:PackIcon   Kind="GoogleAnalytics" Height="25" Width="25" Margin="10" Foreground="White" />
+                            <TextBlock Text="Новости" VerticalAlignment="Center" Margin="20 10" />
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemCreate" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Foreground="White" Kind="FileReport" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Заявки" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemDelete" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Foreground="White" Kind="Chat" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Чат" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemSearch" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Foreground="White" Kind="MoneyUsd" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Финансы" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemSettings" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Foreground="White" Kind="UserGroup" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Собрание" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                </ListView>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
