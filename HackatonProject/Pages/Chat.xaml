@@ -7,6 +7,6 @@
              x:Class="HackatonProject.Pages.Chat"
              xmlns:ctrls="clr-namespace:HackatonProject.Controls">
     <ContentPage.Content>
-        <ctrls:MessagesListControl></ctrls:MessagesListControl>
+        <ctrls:MessagesListControl/>
     </ContentPage.Content>
 </ContentPage>
