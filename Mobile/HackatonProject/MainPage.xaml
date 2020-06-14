@@ -26,7 +26,7 @@
                 
             </ShellContent>
         </Tab>
-        <Tab Title="Мнения" Icon="meeting.png">
+        <Tab Title="Инициативы" Icon="meeting.png">
             <ShellContent ContentTemplate="{DataTemplate Pages:Meeting}">
 
             </ShellContent>
