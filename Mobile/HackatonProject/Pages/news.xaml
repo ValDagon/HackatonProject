@@ -41,7 +41,7 @@
                                         <!-- Текст на новости -->
                                         <StackLayout Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" Margin="20">
                                             <Label Text="{Binding Title}" TextColor="Black" FontSize="24"/>
-                                            <Label Text="{Binding Duration}" Opacity="0.7" TextColor="Black" FontSize="14" Margin="0"/>
+                                            <Label Text="{Binding Duration}" Opacity="0.7" TextColor="Black" FontSize="16" Margin="0" TextDecorations="Underline"/>
                                         </StackLayout>
                                     </Grid>
                                 </Expander.Header>

@@ -102,7 +102,7 @@ namespace HackatonProject.Droid.Renderers
 
         public string Id => Guid.NewGuid().ToString();
 
-        public string Text => "Тестовое сообщение";
+        public string Text => "Здесь вы можете задать интересующий вас вопрос";
 
         public IUser User => new SampleUser();
     }

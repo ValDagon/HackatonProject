@@ -6,10 +6,49 @@
              mc:Ignorable="d"
              x:Class="HackatonProject.Pages.Meeting">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Собрания и опросы"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowSpacing="-10">
+            <Frame IsVisible="True" Margin="10" CornerRadius="20" BackgroundColor="#31408C">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"
+                           Text="Готовы ли вы платить 149 рублей в месяц за видеонаблюдение в подъезде?"
+                           HorizontalTextAlignment="Center"
+                           TextColor="White"
+                           FontSize="20"/>
+                    <Frame BackgroundColor="#5162A8" Grid.Row="2" CornerRadius="5"/>
+                    <Label Padding="5,2" Grid.Row="2" Text="Да" FontSize ="Large" TextColor="White"/>
+                    <Frame BackgroundColor="#5162A8" Grid.Row="3" CornerRadius="5"/>
+                    <Label Padding="5,2" Grid.Row="3" Text="Готов платить, но меньше" FontSize ="Large" TextColor="White"/>
+                    <Frame BackgroundColor="#5162A8" Grid.Row="4" CornerRadius="5"/>
+                    <Label Padding="5,2" Grid.Row="4" Text="Готов платить только за свой этаж" FontSize ="Large" TextColor="White"/>
+                    <Frame BackgroundColor="#5162A8" Grid.Row="5" CornerRadius="5"/>
+                    <Label Padding="5,2" Grid.Row="5" Text="Нет" FontSize ="Large" TextColor="White"/>
+
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="1" IsVisible="True" Margin="10" CornerRadius="20" BackgroundColor="#919191">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"
+                           Text="Довольны ли вы чистотой в своём подъезде?"
+                           HorizontalTextAlignment="Center"
+                           TextColor="White"
+                           FontSize="20"/>
+                    <Frame BackgroundColor="#AFAFAF" Grid.Row="2" CornerRadius="5"/>
+                    <Label Padding="5,5" Grid.Row="2" Text="Полностью доволен" FontSize ="Large" TextColor="White"/>
+                    <Frame BackgroundColor="#AFAFAF" Grid.Row="3" CornerRadius="5"/>
+                    <Label Padding="5,5" Grid.Row="3" Text="В целом доволен, но не всегда" FontSize ="Large" TextColor="White"/>
+                    <Frame BackgroundColor="#AFAFAF" Grid.Row="4" CornerRadius="5"/>
+                    <Label Padding="5,5" Grid.Row="4" Text="Не доволен" FontSize ="Large" TextColor="White"/>
+                    <Frame BackgroundColor="#AFAFAF" Grid.Row="5" CornerRadius="5"/>
+                    <Label Padding="5,5" Grid.Row="5" Text="Выскажу свою позицию отдельно" FontSize ="21" TextColor="White"/>
+
+                </Grid>
+            </Frame>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

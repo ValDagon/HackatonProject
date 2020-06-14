@@ -49,21 +49,6 @@ namespace HackatonProject.Droid.Renderers
             messagesList.SetAdapter(messagesListAdapter);
 
             messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
-            messagesListAdapter.AddToStart(new SampleMessage(), true);
 
             SetNativeControl(linearLayout);
         }
