@@ -110,7 +110,14 @@ namespace NavigationDrawerPopUpMenu2
             selectedSeries.PushOut = 8;
         }
 
-
+        public class Phone
+        {
+            public string namee { get; set; }
+            public string textt { get; set; }
+            public string typee { get; set; }
+            public string datee { get; set; }
+            public string statuss { get; set; }
+        }
 
 
 

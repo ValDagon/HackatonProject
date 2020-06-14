@@ -3,156 +3,255 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:NavigationDrawerPopUpMenu2"
+             
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:lvc= "clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
               xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+              
              mc:Ignorable="d" >
-    <Grid x:Name="GridMain" Background="Lavender" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010">
-        <ScrollViewer>
-            <Grid>
-                <materialDesign:PackIcon Kind="BlurOn" Height="540" Width="1010" >
-                    <materialDesign:PackIcon.Foreground>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF7D27FF" Offset="1"/>
-                            <GradientStop Color="#FFBB2086"/>
-                        </LinearGradientBrush>
-                    </materialDesign:PackIcon.Foreground>
-                </materialDesign:PackIcon>
-
-                <Grid x:Name="print">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="400"/>
-                        <RowDefinition Height="200"/>
-                    </Grid.RowDefinitions>
-
-                    <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" Margin="30,0" Grid.Row="0">
-                        
-                        <TextBlock Text="Заявки" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Foreground="Black" FontFamily="Sitka Subheading"/>
-                    </StackPanel>
-                   
-
-                    <StackPanel Grid.Row="1" HorizontalAlignment="Stretch" Margin="10">
-                        <Grid HorizontalAlignment="Stretch" Height="150">
-
-                            <materialDesign:Card Padding="8"  Foreground="{x:Null}" Margin="10,-14,635,-12">
-                                <materialDesign:Card.Background>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <GradientStop Color="#FF7D27FF" Offset="1"/>
-                                        <GradientStop Color="#FFBB2086"/>
-                                    </LinearGradientBrush>
-                                </materialDesign:Card.Background>
-                            </materialDesign:Card>
-                            <materialDesign:Card Padding="8"  Foreground="{x:Null}" Margin="400,-14,0,-12">
-                                <materialDesign:Card.Background>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <GradientStop Color="#FF7D27FF" Offset="1"/>
-                                        <GradientStop Color="#FFBB2086"/>
-                                    </LinearGradientBrush>
-                                </materialDesign:Card.Background>
-                            </materialDesign:Card>
+    <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010">
+        <Grid.Background>
+            <ImageBrush ImageSource="SnXjOpRb1wQ.jpg"/>
+        </Grid.Background>
 
 
+        <Grid Width="1010" Height="540">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="600"/>
+                <RowDefinition Height="90"/>
+            </Grid.RowDefinitions>
 
-                            <Wpf:PieChart LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="False" DataTooltip="{x:Null}" Margin="25,-14,659,-12">
-                                <Wpf:PieChart.Series>
-                                    <Wpf:PieSeries Title="Рассмотрение" Values="30" DataLabels="True"
-                               LabelPoint="{Binding PointLabel}"/>
-                                    <Wpf:PieSeries Title="В работе" Values="10" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
-                                    <Wpf:PieSeries Title="Выполнена" Values="60" DataLabels="True" 
-                               LabelPoint="{Binding PointLabel}"/>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" >
 
-                                </Wpf:PieChart.Series>
+                <TextBlock Text="Заявки" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="32" Foreground="Black" FontFamily="Times New Roman" FontStyle="Italic"/>
+            </StackPanel>
 
-
-                            </Wpf:PieChart>
-
-
-                            <Grid Margin="377,7,470,10">
-
-
-                                <lvc:PieChart Name="Chart" Series="{Binding SeriesCollection}" 
-                      LegendLocation="Right" InnerRadius="80" Margin="-12,10,-450,10">
-                                    <lvc:PieChart.ChartLegend>
-                                        <lvc:DefaultLegend BulletSize="20"></lvc:DefaultLegend>
-                                    </lvc:PieChart.ChartLegend>
-                                    <lvc:PieChart.DataTooltip>
-                                        <lvc:DefaultTooltip BulletSize="20"></lvc:DefaultTooltip>
-                                    </lvc:PieChart.DataTooltip>
-                                </lvc:PieChart>
-                            </Grid>
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <ListView Grid.Row="1" ItemsSource="{DynamicResource ResourceKey=phones}" Background="#FF5C99D6" Foreground="#FF5C99D6" BorderBrush="#FF5C99D6" >
+                    <ListView.View >
+                        <GridView >
+                            <GridViewColumn DisplayMemberBinding="{Binding namee}" Width="200" Header="Название" />
+                            <GridViewColumn DisplayMemberBinding="{Binding textt}" Width="430" Header="Описание" />
+                            <GridViewColumn  DisplayMemberBinding="{Binding typee}" Width="100" Header="Тип заявки" />
+                            <GridViewColumn  DisplayMemberBinding="{Binding datee}" Width="100" Header="Дата" />
+                            <GridViewColumn DisplayMemberBinding="{Binding statuss}"  Width="100" Header="Статус" />
+                        </GridView>
+                    </ListView.View>
 
 
+                </ListView>
+                <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="#FF5C99D6" >
+                    <TextBlock Text="Прорвало трубу" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="168" Height="35" Foreground="Black"/>
+                    <Grid Width="450" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75*"/>
+                            <ColumnDefinition Width="122*"/>
+                            <ColumnDefinition Width="253*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="m_fontain.jpg" Margin="5"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,10,5,11" Height="32">
+                            <TextBlock Text="Ул.Вишневая дом 56" Foreground="Black" FontSize="14"/>
+                            <TextBlock Text="4 подъезд" Foreground="Black" FontSize="10"/>
+                        </StackPanel>
+                        <TextBlock  Grid.Column="2" Text="Сообщил желец дома Иванов К.И. " Foreground="Black" VerticalAlignment="Top" Margin="5,8,5,0" Height="16"/>
+                        <TextBlock Grid.Column="2" Text="Большой напор воды, весь подвал заливает" Foreground="Black" VerticalAlignment="Bottom" Margin="5,0,5,8" Height="16"/>
+
+                    </Grid>
+                    <TextBlock Text="   Срочно" VerticalAlignment="Center" FontSize="20"  Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="13:15 13.06" VerticalAlignment="Center" FontSize="20" Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="  На рассмотрении" VerticalAlignment="Center" FontSize="20" Height="35" Width="170" Foreground="Black"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"  Orientation="Horizontal" >
+                    <TextBlock Text="Нет горячей воды" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="169" Height="35" Foreground="Black"/>
+                    <Grid Width="450" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75*"/>
+                            <ColumnDefinition Width="122*"/>
+                            <ColumnDefinition Width="253*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="m_list-thumb-11415-5aa8e1eb8a0d6-1709208324.jpg" Margin="5"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,10,5,11" Height="32">
+                            <TextBlock Text="Ул.Ломоносова дом 16" Foreground="Black" FontSize="14"/>
+                            <TextBlock Text="2 подъезд" Foreground="Black" FontSize="10"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="Сообщил желец дома Максимов А.И. " Foreground="Black" VerticalAlignment="Top" Margin="5,8,5,0" Height="16"/>
+                        <TextBlock Grid.Column="2" Text="Горячей воды нет" Foreground="Black" VerticalAlignment="Bottom" Margin="5,0,5,8" Height="16"/>
+
+                    </Grid>
+                    <TextBlock Text="   Срочно" VerticalAlignment="Center" FontSize="20"  Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="13:10 13.06" VerticalAlignment="Center" FontSize="20" Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="  На рассмотрении" VerticalAlignment="Center" FontSize="20" Height="35" Width="170" Foreground="Black"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="#FF5C99D6" >
+                    <TextBlock Text="Нет горячей воды" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="169" Height="35" Foreground="Black"/>
+                    <Grid Width="450" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75*"/>
+                            <ColumnDefinition Width="122*"/>
+                            <ColumnDefinition Width="253*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="m_list-thumb-11415-5aa8e1eb8a0d6-1709208324.jpg" Margin="5"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,10,5,11" Height="32">
+                            <TextBlock Text="Ул.Ломоносова дом 16" Foreground="Black" FontSize="14"/>
+                            <TextBlock Text="3 подъезд" Foreground="Black" FontSize="10"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="Сообщил желец дома Смирнова А.М. " Foreground="Black" VerticalAlignment="Top" Margin="5,8,5,0" Height="16"/>
+                        <TextBlock Grid.Column="2" Text="Из крана бежит только холодная вода" Foreground="Black" VerticalAlignment="Bottom" Margin="5,0,5,8" Height="16"/>
+
+                    </Grid>
+                    <TextBlock Text="   Срочно" VerticalAlignment="Center" FontSize="20"  Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="13:05 13.06" VerticalAlignment="Center" FontSize="20" Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="  На рассмотрении" VerticalAlignment="Center" FontSize="20" Height="35" Width="170" Foreground="Black"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"  Orientation="Horizontal" >
+                    <TextBlock Text="Нет горячей воды" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="169" Height="35" Foreground="Black"/>
+                    <Grid Width="450" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75*"/>
+                            <ColumnDefinition Width="122*"/>
+                            <ColumnDefinition Width="253*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="m_list-thumb-11415-5aa8e1eb8a0d6-1709208324.jpg" Margin="5"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,10,5,11" Height="32">
+                            <TextBlock Text="Ул.Ломоносова дом 16" Foreground="Black" FontSize="14"/>
+                            <TextBlock Text="4 подъезд" Foreground="Black" FontSize="10"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="Сообщил желец дома Александров А.А. " Foreground="Black" VerticalAlignment="Top" Margin="5,8,5,0" Height="16"/>
+                        <TextBlock Grid.Column="2" Text="Нет горячей воды" Foreground="Black" VerticalAlignment="Bottom" Margin="5,0,5,8" Height="16"/>
+
+                    </Grid>
+                    <TextBlock Text="   Срочно" VerticalAlignment="Center" FontSize="20"  Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="13:04 13.06" VerticalAlignment="Center" FontSize="20" Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="  На рассмотрении" VerticalAlignment="Center" FontSize="20" Height="35" Width="170" Foreground="Black"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="#FF5C99D6" >
+                    <TextBlock Text="Нет горячей воды" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="170" Height="35" Foreground="Black"/>
+                    <Grid Width="450" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75*"/>
+                            <ColumnDefinition Width="122*"/>
+                            <ColumnDefinition Width="253*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="m_list-thumb-11415-5aa8e1eb8a0d6-1709208324.jpg" Margin="5"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,10,5,11" Height="32">
+                            <TextBlock Text="Ул.Ломоносова дом 16" Foreground="Black" FontSize="14"/>
+                            <TextBlock Text="4 подъезд" Foreground="Black" FontSize="10"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="Сообщил желец дома Волков В.В. " Foreground="Black" VerticalAlignment="Top" Margin="5,8,5,0" Height="16"/>
+                        <TextBlock Grid.Column="2" Text="В квартире нет горячей воды" Foreground="Black" VerticalAlignment="Bottom" Margin="5,0,5,8" Height="16"/>
+
+                    </Grid>
+                    <TextBlock Text="   Срочно" VerticalAlignment="Center" FontSize="20"  Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="13:03 13.06" VerticalAlignment="Center" FontSize="20" Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="  На рассмотрении" VerticalAlignment="Center" FontSize="20" Height="35" Width="170" Foreground="Black"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"  Orientation="Horizontal" >
+                    <TextBlock Text="Не работает домофон" VerticalAlignment="Center"  HorizontalAlignment="Center" FontSize="20" Width="169" Height="35" Foreground="Black"/>
+                    <Grid Width="450" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="21*"/>
+                            <RowDefinition Height="38*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75*"/>
+                            <ColumnDefinition Width="122*"/>
+                            <ColumnDefinition Width="253*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="m_thumb-list-223x156-0278.jpg" Margin="5" Grid.RowSpan="2"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,13,5,14" Height="32" Grid.RowSpan="2">
+                            <TextBlock Text="Ул.Кирова дом 7" Foreground="Black" FontSize="14"/>
+                            <TextBlock Text="2 подъезд" Foreground="Black" FontSize="10"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="Сообщил желец дома Калинин В.Г. " Foreground="Black" VerticalAlignment="Top" Margin="5,8,5,0" Height="16" Grid.RowSpan="2"/>
+                        <TextBlock Grid.Column="2" Text="Домофон обесточен, проблема в проводке" Foreground="Black" VerticalAlignment="Bottom" Margin="5,0,5,8" Height="16" Grid.Row="1"/>
+
+                    </Grid>
+                    <TextBlock Text="   Срочно" VerticalAlignment="Center" FontSize="20"  Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="12:20 13.06" VerticalAlignment="Center" FontSize="20" Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="  Выполняется" VerticalAlignment="Center" FontSize="20" Height="35" Width="170" Foreground="Black"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="#FF5C99D6" >
+                    <TextBlock Text="Нет света в подъезде" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="170" Height="35" Foreground="Black"/>
+                    <Grid Width="450" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75*"/>
+                            <ColumnDefinition Width="122*"/>
+                            <ColumnDefinition Width="253*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="m_63031_900.jpg" Margin="5"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,10,5,11" Height="32">
+                            <TextBlock Text="Ул.Ленина дом 75" Foreground="Black" FontSize="14"/>
+                            <TextBlock Text="5 подъезд" Foreground="Black" FontSize="10"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="Сообщил желец дома Михалкова Н.М. " Foreground="Black" VerticalAlignment="Top" Margin="5,8,5,0" Height="16"/>
+                        <TextBlock Grid.Column="2" Text="Нужен электрик, чтобы проверил считок" Foreground="Black" VerticalAlignment="Bottom" Margin="5,0,5,8" Height="16"/>
+
+                    </Grid>
+                    <TextBlock Text="   Важно" VerticalAlignment="Center" FontSize="20"  Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="19:30 12.06" VerticalAlignment="Center" FontSize="20" Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="  Выполнена" VerticalAlignment="Center" FontSize="20" Height="35" Width="170" Foreground="Black"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"  Orientation="Horizontal" >
+                    <TextBlock Text="Не работает лифт" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="169" Height="35" Foreground="Black"/>
+                    <Grid Width="450" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75*"/>
+                            <ColumnDefinition Width="122*"/>
+                            <ColumnDefinition Width="253*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="m_EDXij_DXUAAFI7Cываы.jpg" Margin="5"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,10,5,11" Height="32">
+                            <TextBlock Text="Ул.Красновская дом 23" Foreground="Black" FontSize="14"/>
+                            <TextBlock Text="5 подъезд" Foreground="Black" FontSize="10"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="Сообщил желец дома Ефремова М.А. " Foreground="Black" VerticalAlignment="Top" Margin="5,8,5,0" Height="16"/>
+                        <TextBlock Grid.Column="2" Text="Нет горячей воды" Foreground="Black" VerticalAlignment="Bottom" Margin="5,0,5,8" Height="16"/>
+
+                    </Grid>
+                    <TextBlock Text="   Срочно" VerticalAlignment="Center" FontSize="20"  Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="14:44 12.06" VerticalAlignment="Center" FontSize="20" Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="  Выполнена" VerticalAlignment="Center" FontSize="20" Height="35" Width="170" Foreground="Black"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="#FF5C99D6" >
+                    <TextBlock Text="Нет горячей воды" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Width="170" Height="35" Foreground="Black"/>
+                    <Grid Width="450" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75*"/>
+                            <ColumnDefinition Width="122*"/>
+                            <ColumnDefinition Width="253*"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="m_list-thumb-11415-5aa8e1eb8a0d6-1709208324.jpg" Margin="5"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5,10,5,11" Height="32">
+                            <TextBlock Text="Ул.Ломоносова дом 16" Foreground="Black" FontSize="14"/>
+                            <TextBlock Text="4 подъезд" Foreground="Black" FontSize="10"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Text="Сообщил желец дома Волков В.В. " Foreground="Black" VerticalAlignment="Top" Margin="5,8,5,0" Height="16"/>
+                        <TextBlock Grid.Column="2" Text="В квартире нет горячей воды" Foreground="Black" VerticalAlignment="Bottom" Margin="5,0,5,8" Height="16"/>
+
+                    </Grid>
+                    <TextBlock Text="   Срочно" VerticalAlignment="Center" FontSize="20"  Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="13:03 13.06" VerticalAlignment="Center" FontSize="20" Height="35" Width="100" Foreground="Black"/>
+                    <TextBlock Text="  На рассмотрении" VerticalAlignment="Center" FontSize="20" Height="35" Width="170" Foreground="Black"/>
+                </StackPanel>
+
+            </StackPanel>
+
+
+
+        </Grid>
 
 
 
 
-
-
-
-
-                        </Grid>
-
-                        <TextBox Margin="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Поиск" Foreground="Black"/>
-
-                        <Grid Margin="10 0 10 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="3*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="Название" Grid.Column="0" FontSize="12" FontWeight="ExtraLight" Foreground="Black"/>
-                            <TextBlock Text="Пользователь" Grid.Column="1" FontSize="12" FontWeight="ExtraLight" HorizontalAlignment="Center" Foreground="Black"/>
-                            <TextBlock Text="Дата" Grid.Column="2" FontSize="12" FontWeight="ExtraLight" HorizontalAlignment="Center" Foreground="Black"/>
-                            <TextBlock Text="Статус" Grid.Column="3" FontSize="12" FontWeight="ExtraLight" HorizontalAlignment="Right" Foreground="Black" Margin="0,0,30,0"/>
-                        </Grid>
-                        <Rectangle Fill="Black" Height="1" Margin="5 2" Opacity="0.5"/>
-                        <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                            <ListViewItem>
-                                <Grid  Margin="2" HorizontalAlignment="Center" Width="950" >
-
-                                    <TextBlock Text="Прорвало трубу" Grid.Column="0" RenderTransformOrigin="0.453,0.426" Margin="4,0,473,0"/>
-                                    <TextBlock Text="Князев Валентин" HorizontalAlignment="Center" Margin="520,0,246,0" Width="184"/>
-                                    <TextBlock Text="13.06.2020" HorizontalAlignment="Center" Margin="682,0,186,0" Width="82"/>
-                                    <TextBlock Text="Рассмотрение" HorizontalAlignment="Center" Foreground="#FFB5BB25" Margin="848,0,10,0" Width="92"/>
-                                </Grid>
-                            </ListViewItem>
-                            <ListViewItem>
-                                <Grid HorizontalAlignment="Stretch" Margin="2" Width="480">
-
-                                    <TextBlock Text="В подъезде не работает свет" Margin="4,0,65,0" />
-                                    <TextBlock Text="Князев Валентин"  HorizontalAlignment="Center" Margin="520,0,-141,0"/>
-                                    <TextBlock Text="12.06.2020"  HorizontalAlignment="Center" Margin="683,0,-265,0"/>
-                                    <TextBlock Text="В работе"  HorizontalAlignment="Center" Foreground="#FF289E16" Margin="858,0,-431,0"/>
-                                </Grid>
-                            </ListViewItem>
-                            <ListViewItem>
-                                <Grid HorizontalAlignment="Stretch" Margin="2" Width="480">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="3*"/>
-                                        <ColumnDefinition Width="1*"/>
-                                        <ColumnDefinition Width="1*"/>
-                                        <ColumnDefinition Width="1*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Text="Батареи плохо греют" Grid.Column="0" Grid.ColumnSpan="2" Margin="4,0,76,0"/>
-                                    <TextBlock Text="Князев Валентин" Grid.Column="3" HorizontalAlignment="Center" Margin="120,0,-141,0"/>
-                                    <TextBlock Text="10.01.2020" Grid.Column="3" HorizontalAlignment="Center" Margin="283,0,-265,0"/>
-                                    <TextBlock Text="Выполнена" Grid.Column="3" HorizontalAlignment="Center" Foreground="#FF62013C" Margin="453,0,-440,0"/>
-                                </Grid>
-                            </ListViewItem>
-                        </ListView>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="2" Margin="20 0">
-
-                    </StackPanel>
-                </Grid>
-            </Grid>
-
-
-        </ScrollViewer>
     </Grid>
 </UserControl>

@@ -13,6 +13,9 @@
         mc:Ignorable="d"
         Title="Window1"     
          Height="600" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    
+    
+    
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -36,26 +39,30 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid Background="#FFDEDEDE">
-        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" Margin="0,0,4,0">
+        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" >
 
-            <materialDesign:PackIcon Kind="BlurOn" Height="540" Width="1010" >
+            <Grid.Background>
+                <ImageBrush ImageSource="SnXjOpRb1wQ.jpg"/>
+            </Grid.Background>
+
+            <materialDesign:PackIcon Kind="BlurOn" Height="540" Width="1010" Grid.ColumnSpan="2" >
                 <materialDesign:PackIcon.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF7D27FF" Offset="1"/>
-                        <GradientStop Color="#FFBB2086"/>
+                        <GradientStop Color="#FF3361FF" Offset="1"/>
+                        <GradientStop Color="#FF74656F"/>
                     </LinearGradientBrush>
                 </materialDesign:PackIcon.Foreground>
             </materialDesign:PackIcon>
 
-            <materialDesign:Card Padding="8"  Foreground="{x:Null}" Margin="50,45,611,358" Grid.RowSpan="2">
+            <materialDesign:Card Padding="8"  Foreground="{x:Null}" Margin="50,45,584.379,358">
                 <materialDesign:Card.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF7D27FF" Offset="1"/>
-                        <GradientStop Color="#FFBB2086"/>
+                        <GradientStop Color="#FF2B6BAC" Offset="1"/>
+                        <GradientStop Color="#FF9E8D98"/>
                     </LinearGradientBrush>
                 </materialDesign:Card.Background>
             </materialDesign:Card>
-            <StackPanel Margin="73,63,676,8">
+            <StackPanel Margin="73,63,649.379,8">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Foreground="White" Text="Название оргнанизации: "/>
                     <TextBlock Foreground="#FFFDF9F9" Text="УК «УКХ РЭС №1»" Margin="5 0"/>
@@ -73,8 +80,8 @@
                     <TextBlock  Text="8 (35376) 424-34" Foreground="#FFFDF9F9" Margin="5 0"/>
                 </StackPanel>
             </StackPanel>
-            <materialDesign:RatingBar Value="3" x:Name="BasicRatingBar" Margin="258,149,631,216" Foreground="White" Background="Transparent"/>
-            <Label Content="Рейтинг организации" HorizontalAlignment="Left" Margin="244,132,0,0" VerticalAlignment="Top" Height="26" Width="155" FontFamily="Trebuchet MS" Foreground="White" FontSize="14" Grid.RowSpan="2">
+            <materialDesign:RatingBar Value="3" x:Name="BasicRatingBar" Margin="258,149,604.379,216" Foreground="White" Background="Transparent"/>
+            <Label Content="Рейтинг организации" HorizontalAlignment="Left" Margin="244,132,0,0" VerticalAlignment="Top" Height="26" Width="155" FontFamily="Trebuchet MS" Foreground="White" FontSize="14">
                 <Label.BorderBrush>
                     <ImageBrush/>
                 </Label.BorderBrush>
@@ -82,7 +89,7 @@
                     <ImageBrush/>
                 </Label.Background>
             </Label>
-            <materialDesign:PackIcon Kind="ArrowBottomRightThick" Margin="348,43,0,0" Height="34" Width="75" RenderTransformOrigin="0.5,0.5" >
+            <materialDesign:PackIcon Kind="ArrowBottomRightThick" Margin="376,39,0,0" Height="34" Width="75" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF5B5959" >
                 <materialDesign:PackIcon.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -92,7 +99,7 @@
                     </TransformGroup>
                 </materialDesign:PackIcon.RenderTransform>
             </materialDesign:PackIcon>
-            <materialDesign:PackIcon Kind="ArrowBottomRightThick" Margin="27,150,0,0" Height="34" Width="75" RenderTransformOrigin="0.5,0.5" >
+            <materialDesign:PackIcon Kind="ArrowBottomRightThick" Margin="27,150,0,0" Height="34" Width="75" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF5B5959" >
                 <materialDesign:PackIcon.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -103,15 +110,16 @@
                 </materialDesign:PackIcon.RenderTransform>
             </materialDesign:PackIcon>
 
-            <materialDesign:Card Padding="8" Margin="480,45,35,44" Foreground="{x:Null}" Grid.RowSpan="2">
+            <materialDesign:Card Padding="8" Margin="449,36,8,44" Foreground="{x:Null}">
                 <materialDesign:Card.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFF51C40"/>
-                        <GradientStop Color="#FFD89B65" Offset="1"/>
+                        <GradientStop Color="#FF2B6BAC"/>
+                        <GradientStop Color="#FF999088" Offset="1"/>
                     </LinearGradientBrush>
                 </materialDesign:Card.Background>
             </materialDesign:Card>
-            <Label x:Name="label_Copy2" Content="ЖКУ и Капремонт" HorizontalAlignment="Left" Height="28" Margin="507,57,0,0" VerticalAlignment="Top" Width="148" FontSize="16" Foreground="#DDFBFBFB">
+
+            <Label Content="Число не обработанных заявок" HorizontalAlignment="Left" Margin="578,259,0,0" VerticalAlignment="Top" Foreground="#DDFBFBFB" Height="27">
                 <Label.BorderBrush>
                     <ImageBrush/>
                 </Label.BorderBrush>
@@ -119,7 +127,7 @@
                     <ImageBrush/>
                 </Label.Background>
             </Label>
-            <Label x:Name="label_Copy3" Content="1 500 000₽" HorizontalAlignment="Left" Height="50" Margin="666,102,0,0" VerticalAlignment="Top" Width="116" FontSize="18" FontWeight="Bold" Foreground="#DDFBFBFB" Grid.RowSpan="2">
+            <Label Content="Число обработанных заявок" HorizontalAlignment="Left" Margin="609,355,0,0" VerticalAlignment="Top" Foreground="#DDFBFBFB" Height="27" Width="167" FontSize="10">
                 <Label.BorderBrush>
                     <ImageBrush/>
                 </Label.BorderBrush>
@@ -127,36 +135,174 @@
                     <ImageBrush/>
                 </Label.Background>
             </Label>
-            <Label Content="Завки" HorizontalAlignment="Left" Margin="521,142,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#DDFBFBFB">
-                <Label.BorderBrush>
-                    <ImageBrush/>
-                </Label.BorderBrush>
-                <Label.Background>
-                    <ImageBrush/>
-                </Label.Background>
-            </Label>
-            <Label Content="Процент выполненных заявок" HorizontalAlignment="Left" Margin="500,382,0,0" VerticalAlignment="Top" Foreground="#DDFBFBFB">
-                <Label.BorderBrush>
-                    <ImageBrush/>
-                </Label.BorderBrush>
-                <Label.Background>
-                    <ImageBrush/>
-                </Label.Background>
-            </Label>
+            <lvc:Gauge Grid.Column="0" Margin="634,375,245,82"
+                   Uses360Mode="True"
+                   From="0" To="100" Value="30"
+                   HighFontSize="20" Foreground="White"
+                   InnerRadius="0" GaugeBackground="#BE54A3E9"/>
+            <Border  BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="776,247,20,56">
+
+                <ListView Margin="0,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <Label Content="Экстренные завки" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="15" Foreground="#DDFBFBFB">
+                        <Label.BorderBrush>
+                            <ImageBrush/>
+                        </Label.BorderBrush>
+                        <Label.Background>
+                            <ImageBrush/>
+                        </Label.Background>
+                    </Label>
+                    <ListViewItem HorizontalAlignment="Left" Width="164" Height="48"  >
+                        <Grid HorizontalAlignment="Left" Width="154"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Kind="Number1Box" Height="42" Foreground="White" Width="26"  />
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="5">
+                                <TextBlock Text="Прорвало турбу" Foreground="White" FontSize="10"/>
+                                <TextBlock Text="Ул.Вишневая дом 56" Foreground="White" FontSize="10"/>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </ListViewItem>
+                    <ListViewItem HorizontalAlignment="Left" Width="164"  >
+                        <Grid HorizontalAlignment="Left" Width="154"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Kind="Number2Box" Height="42" Foreground="White" Width="26"  />
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="5">
+                                <TextBlock Text="Нет горячей воды" Foreground="White" FontSize="10"/>
+                                <TextBlock Text="Ул.Ломоносова дом 16" Foreground="White" FontSize="10"/>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </ListViewItem>
+                    <ListViewItem HorizontalAlignment="Left"  Width="164"  >
+                        <Grid HorizontalAlignment="Left" Width="154"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Kind="Number3Box" Height="42" Foreground="White" Width="26"  />
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="5">
+                                <TextBlock Text="Нет горячей воды" Foreground="White" FontSize="10"/>
+                                <TextBlock Text="Ул.Ломоносова дом 15" Foreground="White" FontSize="10"/>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </ListViewItem>
+                    <ListViewItem HorizontalAlignment="Left" Width="164"  >
+                        <Grid HorizontalAlignment="Left" Width="154"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Kind="Number4Box" Height="42" Foreground="White" Width="26"  />
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="5">
+                                <TextBlock Text="Нет горячей воды" Foreground="White" FontSize="10"/>
+                                <TextBlock Text="Ул.Ломоносова дом 18" Foreground="White" FontSize="10"/>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </ListViewItem>
+
+                </ListView>
+            </Border>
+            <Border  BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="775,48,20,298">
+
+                <ListView Margin="0,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <Label Content="Рабочие бригады" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="15" Foreground="#DDFBFBFB">
+                        <Label.BorderBrush>
+                            <ImageBrush/>
+                        </Label.BorderBrush>
+                        <Label.Background>
+                            <ImageBrush/>
+                        </Label.Background>
+                    </Label>
+                    <ListViewItem HorizontalAlignment="Left" Width="164" Height="48"  >
+                        <Grid HorizontalAlignment="Left" Width="154"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Kind="Number1Box" Height="42" Foreground="White" Width="26"  />
+                            <StackPanel Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="5">
+                                <TextBlock Text="Лужновский А.В     На" Foreground="White" FontSize="10"/>
+                                <TextBlock Text="Ул.Ленина 23,56 вызове" Foreground="White" FontSize="10"/>
+                            </StackPanel>
+
+
+
+                        </Grid>
+                    </ListViewItem>
+                    <ListViewItem HorizontalAlignment="Left" Width="164" Height="48" >
+                        <Grid HorizontalAlignment="Left" Width="154"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Kind="Number2Box" Height="42" Foreground="White" Width="26"  />
+                            <StackPanel Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="5">
+                                <TextBlock Text="Карпов А.Т        " Foreground="White" FontSize="10"/>
+                                <TextBlock Text="Ждёт заявки" Foreground="White" FontSize="10"/>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </ListViewItem>
+                    <ListViewItem HorizontalAlignment="Left" Width="164"  >
+                        <Grid HorizontalAlignment="Left" Width="154" Height="48" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Kind="Number3Box" Height="42" Foreground="White" Width="26"  />
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
+                                <TextBlock Text="Хлебников В.И" Foreground="White" FontSize="10"/>
+                                <TextBlock Text="Ждёт заявки" Foreground="White" FontSize="10"/>
+                            </StackPanel>
+
+
+                        </Grid>
+                    </ListViewItem>
+
+
+                </ListView>
+            </Border>
 
 
 
 
 
-            <materialDesign:Card Padding="8" Margin="50,228,591,44" Foreground="{x:Null}">
+            <materialDesign:Card Padding="8" Margin="50,228,582,44" Foreground="{x:Null}">
                 <materialDesign:Card.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF016CFD" Offset="1"/>
-                        <GradientStop Color="#FF00E4FF"/>
+                        <GradientStop Color="#FF2B6BAC" Offset="1"/>
+                        <GradientStop Color="#FF9E8D98"/>
                     </LinearGradientBrush>
                 </materialDesign:Card.Background>
             </materialDesign:Card>
-            <materialDesign:TransitioningContent  OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Margin="61,228,611,68">
+            <materialDesign:TransitioningContent  OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Margin="61,228,584.379,68">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,-16,0" Width="342">
                     <StackPanel>
                         <TextBlock Text="10:30 13.06" FontFamily="Cooper Black" Foreground="#FF2573AA"/>
@@ -167,7 +313,7 @@
                             В доме №34 по улице Зеленая  будет проводится собрание жителей по вопросу установки домофонной двери
                             </TextBlock>
                         </StackPanel>
-                        <Button FontFamily="Champagne &amp; Limousines" Content="Перейти" FontSize="12" Margin="25" Background="#FF9CADE6" BorderBrush="White" Height="29" Width="103"/>
+                        <Button FontFamily="Champagne &amp; Limousines" Content="Перейти" FontSize="12" Margin="25" Background="#FFBFCAEE" BorderBrush="#FF5B5959" Height="29" Width="103"/>
                     </StackPanel>
                     <Border  BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Width="167">
                         <ListView Margin="0,0,9,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
@@ -255,7 +401,7 @@
 
             <lvc:Gauge
                    From="0" To="100" Value="50"
-                   LabelsVisibility="Collapsed" Margin="530,324,376,-21">
+                   LabelsVisibility="Collapsed" Margin="634,269,245,185">
                 <lvc:Gauge.GaugeActiveFill>
                     <LinearGradientBrush>
                         <GradientStop Color="Yellow" Offset="0.0" />
@@ -265,19 +411,7 @@
                 </lvc:Gauge.GaugeActiveFill>
             </lvc:Gauge>
 
-            <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Left" Margin="688,63,62,326" Grid.RowSpan="2">
-                <lvc:CartesianChart.AxisX>
-
-                    <lvc:Axis Title="" Labels="{Binding Labels}"></lvc:Axis>
-
-                </lvc:CartesianChart.AxisX>
-                <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title=""  ></lvc:Axis>
-
-                </lvc:CartesianChart.AxisY>
-            </lvc:CartesianChart>
-
-            <Wpf:PieChart LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="False" DataTooltip="{x:Null}" Margin="521,176,355,187">
+            <Wpf:PieChart LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="False" DataTooltip="{x:Null}" Margin="463,285,376,78">
                 <Wpf:PieChart.Series>
                     <Wpf:PieSeries Title="Ремонт" Values="10" DataLabels="True"
                                LabelPoint="{Binding PointLabel}"/>
@@ -293,36 +427,26 @@
             </Wpf:PieChart>
 
 
-            <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Margin="676,90,49,65" Grid.Row="1">
+            <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}" Margin="463,48,223,279">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left">
                     <StackPanel>
-                        <TextBlock Text="10:30 13.06" FontFamily="Cooper Black" Foreground="#FFC00000"/>
-                        <StackPanel Margin="10" Width="150" Height="104" HorizontalAlignment="Left">
-                            <TextBlock Text="Последняя заявка" FontSize="12" FontFamily="Cooper Black" Foreground="#FFC00000"/>
+                        <TextBlock Margin="10 0 0 0" Text="10:30 13.06" FontFamily="Cooper Black" Foreground="White"/>
+                        <StackPanel Margin="10 3 0 3" Width="150" Height="104" HorizontalAlignment="Left">
+                            <TextBlock Text="Последняя заявка" FontSize="12" FontFamily="Cooper Black" Foreground="White"/>
                             <TextBlock Text="Собрание подъезда" FontSize="14" FontFamily="Champagne &amp; Limousines" FontWeight="Bold" Margin="5"/>
                             <TextBlock FontSize="10" FontFamily="Champagne &amp; Limousines" Margin="5" TextWrapping="Wrap">
                             В доме №34 по улице Зеленая  будет проводится собрание жителей по вопросу установки домофонной двери
                             </TextBlock>
                         </StackPanel>
-                        <Button FontFamily="Champagne &amp; Limousines" Content="Перейти" FontSize="12" Margin="25" Background="#FFF33421" BorderBrush="#FFE06713" Height="22" Width="100"/>
+                        <Button FontFamily="Champagne &amp; Limousines" Content="Перейти" FontSize="12" Margin="25" Background="#FFBFCAEE" BorderBrush="#FF5B5959" Height="22" Width="100"/>
                     </StackPanel>
                     <Image  Width="127" Height="129" Source="obsluzhivanie-mnogokvartirnye-1.png" Stretch="UniformToFill"/>
                 </StackPanel>
 
             </materialDesign:TransitioningContent>
-            <materialDesign:PackIcon Kind="AngleRight" Margin="466,465,0,0" Height="31" Width="64" />
-            <materialDesign:PackIcon Kind="AngleRight" Margin="923,46,0,0" Height="31" Width="64" RenderTransformOrigin="0.5,0.5" >
-                <materialDesign:PackIcon.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="180.095"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </materialDesign:PackIcon.RenderTransform>
-            </materialDesign:PackIcon>
+            <materialDesign:PackIcon Kind="AngleRight" Margin="428,470,0,0" Height="30" Width="64" BorderBrush="#FF5B5959" />
 
-            <materialDesign:PackIcon Kind="ChevronDoubleRight" Margin="386,218,0,0" Height="40" Width="36" RenderTransformOrigin="0.5,0.5" >
+            <materialDesign:PackIcon Kind="ChevronDoubleRight" Margin="399,218,0,0" Height="40" Width="36" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF5B5959" >
                 <materialDesign:PackIcon.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -332,7 +456,13 @@
                     </TransformGroup>
                 </materialDesign:PackIcon.RenderTransform>
             </materialDesign:PackIcon>
-            <materialDesign:PackIcon Kind="ChevronDoubleRight" Margin="48,459,0,0" Height="40" Width="36" RenderTransformOrigin="0.5,0.5" >
+            <materialDesign:PackIcon Kind="ChevronDoubleRight" Margin="48,459,0,0" Height="40" Width="36" RenderTransformOrigin="0.5,0.5" IsEnabled="False" >
+                <materialDesign:PackIcon.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF5B5959" Offset="1"/>
+                    </LinearGradientBrush>
+                </materialDesign:PackIcon.BorderBrush>
                 <materialDesign:PackIcon.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -342,20 +472,34 @@
                     </TransformGroup>
                 </materialDesign:PackIcon.RenderTransform>
             </materialDesign:PackIcon>
-            <TextBlock Foreground="White" Text="Место по Оренбургской обл.: " Margin="76,158,794,366" FontSize="10"/>
+            <TextBlock Foreground="White" Text="Место по Оренбургской обл.: " Margin="76,158,767.379,366" FontSize="10"/>
 
             <materialDesign:PackIcon Kind="Number7BoxMultipleOutline" Margin="216,152,0,0" Width="23" Height="22" />
+
+            <Border  BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="463,48,240,298"/>
+            <Border  BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Margin="463,247,239,56"/>
+            <materialDesign:PackIcon Kind="AngleRight" Margin="955,32,-9,0" Height="30" Width="64" BorderBrush="#FF5B5959" RenderTransformOrigin="0.5,0.5" >
+                <materialDesign:PackIcon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </materialDesign:PackIcon.RenderTransform>
+            </materialDesign:PackIcon>
+
 
 
 
 
         </Grid>
-        <Grid Height="60" VerticalAlignment="Top" Background="#FF673AB7">
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="UKX_RES_1" VerticalAlignment="Center" FontSize="16"/>
+                <TextBlock Text="Login" VerticalAlignment="Center" FontSize="16"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" >
                     <StackPanel Width="150">
                         <Button Content="Settings"/>
@@ -370,12 +514,12 @@
 
                 </Button>
                 <Button  HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"  Click="Button_Click">
-                    <materialDesign:PackIcon Kind="Power" Height="22" Width="24"/>
+                    <materialDesign:PackIcon Kind="Close" Height="22" Width="24"/>
                 </Button>
             </StackPanel>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontFamily="Sitka Banner">HackatonProject</TextBlock>
         </Grid>
-        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF673AB7">
+        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF2B6BAC">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
             </Grid.Effect>

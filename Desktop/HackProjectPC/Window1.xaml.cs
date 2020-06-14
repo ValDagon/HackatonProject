@@ -107,6 +107,7 @@ namespace NavigationDrawerPopUpMenu2
             {
                 case "ItemHome":
                     new Window1().ShowDialog();
+                    this.WindowState = WindowState.Minimized;
                     break;
                 case "ItemCreate":
                     usc = new applicationsControl();
@@ -120,7 +121,11 @@ namespace NavigationDrawerPopUpMenu2
                     usc = new financeControl();
                     GridMain.Children.Add(usc);
                     break;
-
+                case "ItemSettings":
+                    usc = new meetingControl();
+                    GridMain.Children.Add(usc);
+                    break;
+                    
                 default:
                     break;
             }

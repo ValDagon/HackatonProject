@@ -77,6 +77,10 @@
     <Compile Include="financeControl.xaml.cs">
       <DependentUpon>financeControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="meetingControl.xaml.cs">
+      <DependentUpon>meetingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Phone.cs" />
     <Compile Include="StartLogin.xaml.cs">
       <DependentUpon>StartLogin.xaml</DependentUpon>
     </Compile>
@@ -121,6 +125,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="meetingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StartLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -199,6 +207,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="m_4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SnXjOpRb1wQ.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_fontain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_b7a6f23bc5e856df6e4c5d04454ac0f7203141d44eb82a529c9554beebcbdc82.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_nov-274.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_59783.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_643355486free-vector-water-tap_133719_Water_tap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_kisspng-hard-water-groundwater-water-supply-tap-water-5af3c8589558a5.2596014215259259766117.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_list-thumb-11415-5aa8e1eb8a0d6-1709208324.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_thumb-list-223x156-0278.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_63031_900.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_EDXij_DXUAAFI7Cываы.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="m_504-5044750_male-user-icon-ancient-asian-peace-symbol.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />
